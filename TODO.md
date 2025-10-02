@@ -1,0 +1,3 @@
+- [x] Edit PurchasePage1.html: Move H1 from head to body, add classes to elements (e.g., class for image div, buttons) for specific styling.
+- [ ] Update style.css: Change body background to light cute color, update colors to pastels, style buttons cutely, add styles for image div, update fonts to cute ones.
+- [ ] Test the page by opening in browser to verify cute appearance.
