@@ -1,11 +1,9 @@
-h2 {
-    font-family: 'Comic Sans MS', cursive;
-    font-size: 36px;
-    color: #ff69b4;
-    text-align: center;
-    margin-bottom: 40px;
-    text-shadow: 1px 1px 2px #ffb6c1;
+|* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
 }
+
 body {
     margin: 80px;
     background: linear-gradient(to bottom, #ffe6f7, #e6f7ff);
@@ -14,6 +12,15 @@ body {
     color: #333;
     text-align: justify;
     line-height: 1.6;
+}
+h2 {
+    font-family: 'Arial Black', Gadget, sans-serif;
+    border: 3px solid #1084b1;
+    font-size: 36px;
+    color: #1084b1;
+    text-align: center;
+    margin-bottom: 40px;
+    text-shadow: 1px 1px 2px #ffb6c1;
 }
 h3 {
     font-family: 'Courier New', Courier, monospace;
@@ -80,5 +87,307 @@ h3 {
     background-image: url(calibre-de-lion-roaring-vector-icon-logo-104025477.jpg);
     background-repeat: no-repeat;
     background-size: calc(50px + 100%) calc(50% + 100px);
-    
+
+}
+
+/* Navbar styles */
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: #1084b1;
+    z-index: 10;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    display: flex;
+    align-items: center;
+    padding: 0 20px;
+}
+
+.navbar ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.navbar li {
+    margin: 0 20px;
+}
+
+.navbar a {
+    color: rgb(204, 23, 23);
+    text-decoration: none;
+    align-items: center;
+    padding: 15px 20px;
+    display: block;
+    transition: background 0.3s;
+}
+
+.navbar a:hover {
+    background: #ffb6c1;
+}
+
+/* Section styles */
+.section {
+    min-height: 100vh;
+    padding: 120px 20px 50px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+#home {
+    background: url('fictional Background.jpg') no-repeat center center;
+    background-size: cover;
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+}
+
+#about {
+    background: linear-gradient(to bottom, #e6f7ff, #ffe6f7);
+}
+
+#services {
+    background: url('abstract-gold-triangle-on-dark-metallic-design-vector-31366510.jpg') no-repeat center center;
+    background-size: cover;
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+}
+
+#services ul {
+    list-style: none;
+    padding: 0;
+}
+
+#services li {
+    background: rgba(255,255,255,0.8);
+    color: black;
+    margin: 10px auto;
+    padding: 10px;
+    border-radius: 5px;
+    max-width: 300px;
+}
+
+#contact {
+    background: #f0f0f0;
+}
+
+#contact form {
+    max-width: 400px;
+    margin: 20px auto;
+}
+
+#contact input, #contact button {
+    display: block;
+    width: 100%;
+    margin: 10px 0;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+#contact button {
+    background: #1084b1;
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+#contact button:hover {
+    background: #ffb6c1;
+}
+
+/* Hamburger button styles */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    background: none;
+    border: none;
+    padding: 10px;
+    margin-left: auto;
+}
+
+.hamburger span {
+    width: 25px;
+    height: 3px;
+    background: white;
+    margin: 3px 0;
+    transition: 0.3s;
+}
+
+.hamburger.open span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+}
+
+.hamburger.open span:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger.open span:nth-child(3) {
+    transform: rotate(-45deg) translate(7px, -6px);
+}
+
+/* Drawer styles */
+.drawer {
+    display: none;
+    position: fixed;
+    top: 0;
+    right: -250px;
+    width: 250px;
+    height: 100%;
+    background: #1084b1;
+    z-index: 1000;
+    transition: right 0.3s ease;
+    padding-top: 60px;
+}
+
+.drawer.open {
+    right: 0;
+}
+
+.close-drawer {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 30px;
+    cursor: pointer;
+    padding: 5px;
+}
+
+.drawer ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.drawer li {
+    margin: 0;
+}
+
+.drawer a {
+    color: white;
+    text-decoration: none;
+    padding: 15px 20px;
+    display: block;
+    transition: background 0.3s;
+}
+
+.drawer a:hover {
+    background: #ffb6c1;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+    .navbar .nav-menu {
+        display: none;
+    }
+
+    .hamburger {
+        display: flex;
+    }
+
+    .drawer {
+        display: block;
+    }
+
+    body {
+        margin: 0;
+    }
+
+    .section {
+        padding: 80px 10px 20px;
+    }
+
+    h1 {
+        font-size: 2em;
+    }
+
+    h2 {
+        font-size: 1.5em;
+    }
+
+    p, li {
+        font-size: 1em;
+    }
+}
+
+/* Login page styles */
+body:has(.container) {
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(to bottom, #ffe6f7, #e6f7ff);
+}
+
+.container {
+    background: white;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    max-width: 400px;
+    width: 100%;
+    text-align: center;
+}
+
+.container h2 {
+    margin-bottom: 20px;
+    color: #1084b1;
+}
+
+.container form {
+    display: flex;
+    flex-direction: column;
+}
+
+.container label {
+    text-align: left;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.container input {
+    margin-bottom: 15px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.container .btn {
+    background: #1084b1;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.container .btn:hover {
+    background: #ffb6c1;
+}
+
+.container p {
+    margin-top: 20px;
+}
+
+.container button {
+    margin-top: 10px;
+    padding: 10px;
+    background: #f0f0f0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.container button:hover {
+    background: #e0e0e0;
 }
