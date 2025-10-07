@@ -61,4 +61,33 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Add navigation buttons if needed
     // For example, add a button to go to purchase from index
+
+    // Hamburger menu toggle
+    const hamburger = document.getElementById('hamburger');
+    const drawer = document.getElementById('drawer');
+    const closeDrawer = document.getElementById('closeDrawer');
+
+    if (hamburger && drawer) {
+        hamburger.addEventListener('click', function() {
+            drawer.classList.toggle('open');
+            hamburger.classList.toggle('open');
+        });
+
+        // Close drawer when close button is clicked
+        if (closeDrawer) {
+            closeDrawer.addEventListener('click', function() {
+                drawer.classList.remove('open');
+                hamburger.classList.remove('open');
+            });
+        }
+
+        // Close drawer when a link is clicked
+        const drawerLinks = drawer.querySelectorAll('a');
+        drawerLinks.forEach(link => {
+            link.addEventListener('click', function() {
+                drawer.classList.remove('open');
+                hamburger.classList.remove('open');
+            });
+        });
+    }
 });
